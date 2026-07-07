@@ -1,40 +1,95 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <title>Países em Desenvolvimento - Saúde</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-            background-color: #f9f9f9;
-            color: #333;
-        }
-        h1, h2 {
-            color: #005f73;
-        }
-        .pais {
-            margin-bottom: 30px;
-            padding: 15px;
-            background-color: #e0f7fa;
-            border-radius: 8px;
-        }
-        ul {
-            margin-left: 20px;
-        }
-        footer {
-            margin-top: 40px;
-            text-align: center;
-            font-size: 0.9em;
-            color: #555;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <title>Países em Desenvolvimento</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      background-color: #f9f9f9;
+    }
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+    .tabs {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+    .tab {
+      padding: 10px 20px;
+      cursor: pointer;
+      background-color: #ddd;
+      margin: 0 5px;
+      border-radius: 5px;
+      transition: 0.3s;
+    }
+    .tab:hover {
+      background-color: #bbb;
+    }
+    .tab.active {
+      background-color: #007BFF;
+      color: white;
+    }
+    .content {
+      display: none;
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .content.active {
+      display: block;
+    }
+    h2 {
+      color: #007BFF;
+    }
+  </style>
 </head>
 <body>
-    <h1>Países em Desenvolvimento - Grupo 3</h1>
-    <p><strong>Integrantes:</strong> Luciana, Camila, Roberta, Ivanete, Julian, Maria, Rafaela</p>
-    <h2>China, Índia e Turquia</h2>
-
-    <div class="pais">
-        <h3>China</h3>
-        <ul>
+  <h1>China, Índia e Turquia - Saúde</h1>
+  
+  <div class="tabs">
+    <div class="tab active" onclick="showContent('china')">China</div>
+    <div class="tab" onclick="showContent('india')">Índia</div>
+    <div class="tab" onclick="showContent('turquia')">Turquia</div>
+  </div>
+  
+  <div id="china" class="content active">
+    <h2>China</h2>
+    <p><strong>Modelo de Cobertura:</strong> Sistema yī bǎo cobre mais de 95% da população.</p>
+    <p><strong>Financiamento:</strong> Governo cobre cerca de 74%, pacientes pagam coparticipação.</p>
+    <p><strong>Estrutura:</strong> 90% dos atendimentos em hospitais públicos; Medicina Tradicional Chinesa integrada.</p>
+  </div>
+  
+  <div id="india" class="content">
+    <h2>Índia</h2>
+    <p><strong>Modelo de Cobertura:</strong> Programa Ayushman Bharat para famílias vulneráveis.</p>
+    <p><strong>Desafios:</strong> 70% da população em áreas rurais com pouca infraestrutura.</p>
+    <p><strong>Estrutura:</strong> Sistema público coexistindo com setor privado forte; polo global de turismo médico.</p>
+  </div>
+  
+  <div id="turquia" class="content">
+    <h2>Turquia</h2>
+    <p><strong>Modelo de Cobertura:</strong> Seguro de Saúde Geral (GSS) garante cobertura universal.</p>
+    <p><strong>Financiamento:</strong> Impostos e contribuições; Estado paga prêmios para baixa renda.</p>
+    <p><strong>Estrutura:</strong> Sistema público gratuito e rede privada; destaque em turismo médico.</p>
+  </div>
+  
+  <script>
+    function showContent(id) {
+      // Esconde todas as seções
+      const contents = document.querySelectorAll('.content');
+      const tabs = document.querySelectorAll('.tab');
+      contents.forEach(c => c.classList.remove('active'));
+      tabs.forEach(t => t.classList.remove('active'));
+      
+      // Mostra a seção escolhida
+      document.getElementById(id).classList.add('active');
+      event.target.classList.add('active');
+    }
+  </script>
+</body>
+</html>
