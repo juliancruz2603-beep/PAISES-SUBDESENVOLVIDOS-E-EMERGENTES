@@ -1,84 +1,79 @@
-/* Reset básico */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+:root {
+  --primary-color: #007BFF;
+  --bg-color: #f9f9f9;
+  --text-color: #333;
+  --tab-bg: #ddd;
+  --tab-hover: #bbb;
+  --shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin: 30px auto;
-    max-width: 800px;
-    background-color: #f4f7f6;
-    color: #333;
-    padding: 0 20px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  margin: 0;
+  padding: 20px;
+  background-color: var(--bg-color);
+  color: var(--text-color);
 }
 
 h1 {
-    text-align: center;
-    color: #222;
-    margin-bottom: 25px;
+  text-align: center;
+  margin-bottom: 30px;
 }
 
-/* Estilização das Abas */
 .tabs {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 25px;
 }
 
 .tab {
-    padding: 12px 24px;
-    cursor: pointer;
-    background-color: #e0e0e0;
-    border: none;
-    border-radius: 6px;
-    font-size: 1rem;
-    font-weight: 600;
-    color: #666;
-    transition: all 0.3s ease;
+  padding: 12px 24px;
+  cursor: pointer;
+  background-color: var(--tab-bg);
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: background-color 0.2s ease, transform 0.1s ease;
 }
 
 .tab:hover {
-    background-color: #d0d0d0;
-    color: #333;
+  background-color: var(--tab-hover);
 }
 
 .tab.active {
-    background-color: #007BFF;
-    color: white;
-    box-shadow: 0 4px 6px rgba(0, 123, 255, 0.2);
+  background-color: var(--primary-color);
+  color: white;
 }
 
-/* Estilização do Conteúdo */
 .content {
-    display: none;
-    background: white;
-    padding: 25px;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-    animation: fadeIn 0.4s ease;
+  display: none;
+  background: white;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+  max-width: 600px;
+  margin: 0 auto;
 }
 
 .content.active {
-    display: block;
+  display: block;
+  animation: fadeIn 0.3s ease;
 }
 
-h2 {
-    color: #007BFF;
-    margin-bottom: 15px;
-    border-bottom: 2px solid #f0f0f0;
-    padding-bottom: 10px;
+.content h2 {
+  margin-top: 0;
+  color: var(--primary-color);
+  border-bottom: 2px solid var(--bg-color);
+  padding-bottom: 10px;
 }
 
 .content p {
-    line-height: 1.6;
-    margin-bottom: 10px;
+  line-height: 1.6;
+  margin: 12px 0;
 }
 
-/* Animação suave para exibir o conteúdo */
 @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
+  from { opacity: 0; transform: translateY(5px); }
+  to { opacity: 1; transform: translateY(0); }
 }
